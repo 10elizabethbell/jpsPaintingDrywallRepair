@@ -83,8 +83,10 @@ p{margin:0}
 .hero h1 em{font-style:normal;color:var(--wood-ink)}
 .pitch{margin-top:14px;font-size:clamp(16px,4.6vw,20px);line-height:1.4;max-width:34ch}
 .pitch strong{font-weight:800}
-.offer{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:7px 14px 7px 8px;border-radius:999px;background:var(--plaster-2);font-weight:800;font-size:15px}
-.offer i{font-style:normal;display:grid;place-items:center;min-width:44px;height:30px;padding:0 8px;border-radius:999px;background:var(--wood);color:var(--navy-deep);font-weight:900;font-size:14px}
+.offer{margin-top:16px;font-weight:800;font-size:17px;line-height:1.3}
+/* the offer is painted on: a ragged swipe of tan behind "10% off" (a label, not a control) */
+.swash{position:relative;display:inline-block;margin:0 4px 0 6px;padding:3px 14px 4px;font-weight:900;font-size:21px;color:var(--navy-deep);z-index:0;white-space:nowrap}
+.swash::before{content:"";position:absolute;inset:-1px -6px;z-index:-1;transform:rotate(-1.5deg);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 50' preserveAspectRatio='none'%3E%3Cpath fill='%23c58d52' d='M7 13C38 6 112 3 193 9l-5 6 9 4-6 5 7 6-8 3C142 41 74 45 9 41l4-6-9-4 7-5-6-6z'/%3E%3Cpath fill='%23d49e63' d='M22 15c50-5 110-6 160-2l-2 5c-52-4-104-3-157 2z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 .hero .btns{margin-top:18px}
 
 /* the can of wet paint: two canvases share one simulation so paint laps the seal's base */
@@ -230,7 +232,7 @@ footer .demo{margin-top:22px;padding-top:16px;border-top:1px solid rgba(201,211,
   .top-call{width:auto;height:48px;padding:0 18px;border-radius:999px;gap:8px;display:flex;align-items:center;font-weight:800;text-decoration:none;font-variant-numeric:tabular-nums}
   .hero{padding-top:40px}
   .paint{--band-h:300px;--head:90px;margin-top:calc(var(--head) * -1 + 30px)}
-  .paint .seal{width:300px;height:300px;right:max(var(--gutter),calc((100% - 1180px)/2 + 40px));top:calc(var(--head) - 190px)}
+  .paint .seal{width:300px;height:300px;right:max(var(--gutter),calc((100% - 1180px)/2 + 40px));top:calc(var(--head) - 153px)}
   .services{padding:70px 0 60px}
   .svc-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:start}
   .wall{margin-top:0;position:sticky;top:30px}
@@ -303,7 +305,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="wrap hero-copy">
     <h1 id="hero-h">Fresh paint. <em>Smooth walls.</em></h1>
     <p class="pitch">Interior &amp; exterior painting and drywall repair in Barnegat, NJ. <strong>Bonded &amp; insured. Free estimates.</strong></p>
-    <p class="offer"><i>10%</i> off for small businesses</p>
+    <p class="offer"><span class="swash">10% off</span> for small businesses</p>
     <div class="btns" id="hero-btns">
       <a class="btn btn-primary" href="tel:+16093123091">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.4-2.1 1.4a11 11 0 0 0 5.9 6l1.4-2.1 4.5 1.6v3.3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>
