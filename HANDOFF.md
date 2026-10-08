@@ -47,7 +47,7 @@ Muse couldn't read the Facebook page. The crawler user agent could: the profile 
 - `book.html` estimate form composed into a text (needs an email/phone confirmation of texting).
 - Splatter into the "Got a wall" headline when droplets fly near it; paint "bleeding" up into the hero text on a strong drag.
 - Color-swatch picker on the drywall demo (roll the wall in navy, wood, cream).
-- The phone seal shows about 80% above the paint (raised 2026-10-08 after Ellie saw it too covered on a real phone). The band starts 30px lower on phones to make room under the Text button.
+- The phone seal shows about 70% above the paint (Ellie tuned it from 80%) (raised 2026-10-08 after Ellie saw it too covered on a real phone). The band starts 30px lower on phones to make room under the Text button.
 - The finish reviewer noted the drops from the divider drips just vanish. They could land and pool instead.
 - Google Business Profile setup: they have no Maps listing, which is a bigger lead source than the site. Worth pitching alongside it.
 
