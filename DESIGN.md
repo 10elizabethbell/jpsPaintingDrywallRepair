@@ -260,3 +260,12 @@ Under `prefers-reduced-motion: reduce` the loop never starts: the band and every
 - **Don't** add a second accent color or a web font; the palette is the seal's and the type is the system stack.
 - **Don't** put wood text directly on plaster except `wood-ink`.
 - **Don't** add stock photography, icon-card grids, or testimonial carousels; the only image is the seal.
+
+## Paint the page (added 2026-10-08)
+
+The whole site is a wall the visitor can paint.
+- **Layer:** one canvas (`#wallpaint`) spans the full document height at `z-index:0`, under all content. Content blocks (`.wrap`, `.top`, `.paint`, `.edge`) sit at `z-index:1`. Paint shows on the plaster and navy grounds, behind text and buttons, so contact actions can't be painted out.
+- **Palette:** four daubs, each a paint blob with a drip: navy `#1e3a5c`, tan `#c58d52`, slate `#7d93ad`, cream `#efe6d4`. They sit with Wipe and ✕ in a navy pill. Desktop: fixed at the right, centred vertically. Phone: folded into a brush button (`.fab`) above the sticky Call | Text bar.
+- **Brush mode:** picking a colour turns on `body.painting`, which shows a full-screen catcher (`.catch`, `touch-action:none`), so drags paint instead of scrolling. ✕, re-tapping the active colour, or Esc puts the brush down. A tip at the top says how to get scrolling back.
+- **Brush look:** a wet body laid underneath with `destination-over`, plus `BRISTLES` continuous flat-ended streaks in light and dark shades of the colour. The brush runs dry over `LOAD_RUN` px: the body stops and bristles drop out into dry streaks, then it reloads on the next stroke.
+- **Tunables in `CFG`:** `BRUSH_DESK`, `BRUSH_PHONE`, `BRISTLES`, `LOAD_RUN`, `MAX_PX` (pixel cap that keeps the page canvas light on phones).

@@ -7,6 +7,7 @@
 - **Signature motion:** the hero ends in a band of marbled paint on canvas: four navy layers with a soft wet sheen, plus wood and cream streaks that swell, pinch to nothing and cross under and over them. Mouse or finger shoves and drags the paint, it springs back with a wobble, and a hard upward flick throws droplets that fall back in and dent the surface. The real JPS seal floats in the paint, bobbing and tilting with the surface (two canvases, so paint laps over its base).
 - **Carried everywhere:** section dividers are live paint edges. Navy drips grow, drop a bead and pull back, and the pointer sways them. Rising wavy edges lead into the navy sections.
 - **Sections:** hero ("Fresh paint. Smooth walls.", pitch line, "10% off for small businesses" pill, Call + Text) → services (4 rows; each whole row is a pre-filled text) + **drywall demo** (a damaged wall you roll fresh paint over; one auto-stroke plays the first time it scrolls into view) → how it works (a paint-chip card, three one-line steps) → local to Barnegat (owner, license, bonded and insured, phone, big seal) → close (Call / Text / Facebook) → footer with "Demo one-pager — free sample."
+- **Paint the page:** pick one of four site colours (navy, tan, slate, cream) and paint anywhere on the site with a bristle brush that runs dry. Paint sits under the text and buttons. Desktop: colours in a column on the right; drag to paint, click the colour again or press Esc to stop. Phone: a brush button opens the colours; while a colour is picked, drags paint instead of scrolling, and ✕ stops. Wipe clears it all.
 - **Contact:** `tel:+16093123091` is primary everywhere; `sms:` with pre-filled bodies per service is secondary; Facebook page link in the close. On phones a sticky Call | Text bar appears once the hero buttons scroll away and hides at the close section.
 - Tunables are at the top of the script in `CFG` (speed, swell, push radius and force, spring, drip count and length, roller size).
 
@@ -62,6 +63,7 @@ One Impeccable finish review (2026-10-08). Applied all 8 material fixes:
 - The paint band read as waves, not paint (marbling and sheen added).
 
 ## Not verified
+- Paint the page on a real phone: brush mode blocks scrolling until ✕ (by design). Check that this reads clearly in Facebook's in-app browser. Painting navy over the navy headline hides the headline until it's wiped.
 - Real-device touch (iOS Safari, Android Chrome, Facebook in-app browser): tested only with simulated touch events in headless Chrome.
 - `sms:` pre-filled body on real iOS/Android; `tel:` handoff.
 - Frame rate on older phones (hero ~30 points × 7 ribbons per frame + 2 SVG dividers on phones).

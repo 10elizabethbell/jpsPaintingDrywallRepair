@@ -31,7 +31,7 @@
 /* ===== Base (phone first) ===== */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scrollbar-color:var(--navy) var(--plaster)}
-body{margin:0;background:var(--plaster);color:var(--ink);font:400 17px/1.55 var(--font);overflow-x:hidden;caret-color:var(--wood)}
+body{position:relative;margin:0;background:var(--plaster);color:var(--ink);font:400 17px/1.55 var(--font);overflow-x:hidden;caret-color:var(--wood)}
 ::selection{background:var(--navy);color:var(--plaster)}
 .navy ::selection,.navy::selection{background:var(--wood-lt);color:var(--navy-deep)}
 img{max-width:100%;display:block}
@@ -40,7 +40,7 @@ a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
 h1,h2,h3{font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:.98;margin:0;text-wrap:balance}
 h2{font-size:clamp(2rem,9vw,3.6rem)}
 p{margin:0}
-.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--gutter)}
+.wrap{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:0 var(--gutter)}
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:12px;top:12px;z-index:50;background:var(--navy);color:var(--plaster);padding:10px 14px}
 .navy{background:var(--navy-deep);color:var(--on-navy)}
@@ -65,7 +65,7 @@ p{margin:0}
 }
 
 /* ===== Top bar ===== */
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px var(--gutter);max-width:1180px;margin:0 auto}
+.top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px var(--gutter);max-width:1180px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
 .brand .seal{width:44px;height:44px;flex:none;box-shadow:none}
 .brand b{font-weight:900;text-transform:uppercase;font-size:14px;line-height:1.1;letter-spacing:.01em}
@@ -88,7 +88,7 @@ p{margin:0}
 .hero .btns{margin-top:18px}
 
 /* the can of wet paint: two canvases share one simulation so paint laps the seal's base */
-.paint{position:relative;height:var(--band-h);margin-top:calc(var(--head) * -1 + 40px);--band-h:200px;--head:60px;pointer-events:none}
+.paint{position:relative;z-index:1;height:var(--band-h);margin-top:calc(var(--head) * -1 + 40px);--band-h:200px;--head:60px;pointer-events:none}
 .paint canvas{position:absolute;inset:0;width:100%;height:100%}
 .paint .back{z-index:0}
 .paint .front{z-index:2}
@@ -122,7 +122,7 @@ p{margin:0}
 .reset{min-height:44px;padding:0 16px;border-radius:999px;border:2px solid rgba(201,211,223,.4);background:none;color:var(--on-navy);font:800 14px var(--font);cursor:pointer;flex:none}
 
 /* ===== Animated paint dividers (SVG paths rebuilt each frame) ===== */
-.edge{display:block;width:100%;height:var(--edge-h,74px);overflow:visible;pointer-events:none}
+.edge{position:relative;z-index:1;display:block;width:100%;height:var(--edge-h,74px);overflow:visible;pointer-events:none}
 .edge.drip{margin-bottom:-6px;margin-top:-1px;clip-path:inset(-20px 0 0 0)}
 .edge.rise{margin-top:-30px}
 
@@ -205,7 +205,33 @@ footer .demo{margin-top:22px;padding-top:16px;border-top:1px solid rgba(201,211,
   footer{padding-bottom:50px}
   .bar{display:none}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.go,.bar{transition:none}}
+
+/* ===== Paint the page: the whole site is a wall; user paint sits under the content ===== */
+.wallpaint{position:absolute;left:0;top:0;width:100%;z-index:0;pointer-events:none}
+.catch{position:fixed;inset:0;z-index:30;display:none;touch-action:none;cursor:crosshair}
+body.painting .catch{display:block}
+body.painting{user-select:none;-webkit-user-select:none}
+.palette{position:fixed;z-index:45;right:10px;bottom:calc(84px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:10px;transition:bottom .35s cubic-bezier(.2,.8,.2,1)}
+.palette .daubs{display:none;flex-direction:column;align-items:center;gap:10px;padding:10px 7px;border-radius:999px;background:rgba(19,41,74,.92);box-shadow:0 14px 30px -12px rgba(19,41,74,.7)}
+.palette.open .daubs{display:flex}
+.daub{position:relative;width:44px;height:44px;border:0;padding:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.daub svg{width:100%;height:100%;display:block;overflow:visible}
+.daub[aria-pressed="true"]{transform:scale(1.18)}
+.daub[aria-pressed="true"]::after{content:"";position:absolute;left:50%;bottom:-7px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--wood-lt)}
+.tool{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:2px solid rgba(201,211,223,.45);background:none;color:var(--on-navy);cursor:pointer;font:800 11px var(--font);letter-spacing:.04em;text-transform:uppercase}
+.tool svg{width:20px;height:20px}
+.tool[hidden]{display:none}
+.fab{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:0;background:var(--navy);color:var(--plaster);box-shadow:0 14px 30px -12px rgba(19,41,74,.75);cursor:pointer}
+.fab svg{width:24px;height:24px}
+.palette.open .fab{background:var(--wood);color:var(--navy-deep)}
+.paint-tip{position:fixed;z-index:45;left:50%;top:14px;transform:translate(-50%,-140%);padding:9px 16px;border-radius:999px;background:var(--navy-deep);color:var(--on-navy);font-weight:800;font-size:14px;box-shadow:0 14px 30px -12px rgba(19,41,74,.7);transition:transform .35s cubic-bezier(.2,.8,.2,1);pointer-events:none;white-space:nowrap}
+body.painting .paint-tip{transform:translate(-50%,0)}
+@media (min-width:900px){
+  .palette{right:18px;top:50%;bottom:auto;transform:translateY(-50%)}
+  .palette .daubs{display:flex}
+  .palette .fab{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.go,.bar,.palette,.paint-tip,.daub{transition:none}}
 </style>
 </head>
 <body>
@@ -353,6 +379,23 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </footer>
 
+
+<canvas class="wallpaint" id="wallpaint" aria-hidden="true"></canvas>
+<div class="catch" id="catch" aria-hidden="true"></div>
+<p class="paint-tip" id="paint-tip" role="status">Painting. Tap ✕ to scroll again.</p>
+<div class="palette" id="palette">
+  <div class="daubs" role="group" aria-label="Paint the page">
+    <button class="daub" type="button" data-color="#1e3a5c" aria-pressed="false" aria-label="Paint navy"></button>
+    <button class="daub" type="button" data-color="#c58d52" aria-pressed="false" aria-label="Paint tan"></button>
+    <button class="daub" type="button" data-color="#7d93ad" aria-pressed="false" aria-label="Paint slate blue"></button>
+    <button class="daub" type="button" data-color="#efe6d4" aria-pressed="false" aria-label="Paint cream"></button>
+    <button class="tool wipe" type="button" aria-label="Wipe the paint off">Wipe</button>
+    <button class="tool stop" type="button" aria-label="Put the brush down" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <button class="fab" type="button" aria-expanded="false" aria-label="Paint the page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3.5l6 6-7.5 7.5-6-6z"/><path d="M7 11l-2.6 2.6c-1 1-.7 2.3-1.9 3.5 2.2.9 4.6.6 6-0.8L11 13.8"/></svg>
+  </button>
+</div>
 <div class="bar navy" id="bar" aria-hidden="true">
   <a class="btn btn-primary" href="tel:+16093123091" tabindex="-1">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.4-2.1 1.4a11 11 0 0 0 5.9 6l1.4-2.1 4.5 1.6v3.3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>Call</a>
@@ -380,7 +423,12 @@ var CFG = {
   DRIP_MAX: 46,          // longest drip, px
   // drywall demo
   ROLLER_PHONE: 46, ROLLER_DESK: 64,
-  DONE_AT: 0.86          // share of wall painted that counts as "done"
+  DONE_AT: 0.86,         // share of wall painted that counts as "done"
+  // paint the page
+  BRUSH_DESK: 34, BRUSH_PHONE: 26,  // brush width, px
+  BRISTLES: 14,          // streaks per stroke
+  LOAD_RUN: 1400,        // px of dragging before the brush runs dry
+  MAX_PX: 9e6            // cap on page-canvas pixels (memory on phones)
 };
 
 /* ===== Contact links: pre-filled texts ===== */
@@ -752,6 +800,81 @@ function smoothPath(ctx, xs, ys){
     }, {threshold: [0, .6]});
     io.observe(cv);
   }
+})();
+
+/* ===== Paint the page: pick a color, drag anywhere; paint dries under the content ===== */
+(function(){
+  var cv = document.getElementById('wallpaint'), ctx = cv.getContext('2d');
+  var catcher = document.getElementById('catch'), pal = document.getElementById('palette');
+  var daubs = pal.querySelectorAll('.daub'), fab = pal.querySelector('.fab'), stopBtn = pal.querySelector('.stop'), bar = document.getElementById('bar');
+  var color = null, scale = 1, W = 0, H = 0, stroke = null;
+  // each swatch is a paint daub with a drip, drawn in its own color
+  Array.prototype.forEach.call(daubs, function(b){
+    var c = b.getAttribute('data-color');
+    b.innerHTML = '<svg viewBox="0 0 44 44" aria-hidden="true"><path d="M22 4c9.5 0 17 7 17 16.5 0 7-4.2 12.2-9.6 14.4-1.3.5-1.9 1.3-1.9 2.8v1.8a2.5 2.5 0 0 1-5 0v-1.2c0-1-.6-1.6-1.6-1.9C11.2 34.6 5 28.6 5 20.5 5 11 12.5 4 22 4Z" fill="' + c + '" stroke="#f1ebdf" stroke-width="2.5"/></svg>';
+  });
+  function size(){
+    var w = document.documentElement.clientWidth, h = document.documentElement.scrollHeight;
+    if (w === W && h === H) return;
+    var dpr = Math.min(2, devicePixelRatio || 1), s = Math.min(dpr, Math.sqrt(CFG.MAX_PX / (w * h)));
+    var old = null;
+    if (W && H) { old = document.createElement('canvas'); old.width = cv.width; old.height = cv.height; old.getContext('2d').drawImage(cv, 0, 0); }
+    cv.width = Math.round(w * s); cv.height = Math.round(h * s); cv.style.height = h + 'px';
+    ctx.setTransform(s, 0, 0, s, 0, 0); scale = s;
+    if (old) ctx.drawImage(old, 0, 0, old.width, old.height, 0, 0, W, H); // keep what's painted, in page px
+    W = w; H = h;
+  }
+  // bristles: fixed offsets across the brush, each with its own opacity and thickness
+  var BR = [];
+  for (var i = 0; i < CFG.BRISTLES; i++) BR.push({o: (i / (CFG.BRISTLES - 1) - .5) + (Math.sin(i * 12.9) * .03), a: .55 + .45 * Math.abs(Math.sin(i * 7.7)), w: .9 + .7 * Math.abs(Math.sin(i * 3.1))});
+  // bristle shades of the picked color (solid, so overlapping segments never stack up darker)
+  var shades = [];
+  function shade(hex, f){ var n = parseInt(hex.slice(1), 16), c = [n >> 16, n >> 8 & 255, n & 255].map(function(v){ return Math.round(f < 0 ? v * (1 + f) : v + (255 - v) * f); }); return 'rgb(' + c.join(',') + ')'; }
+  function loadShades(){ shades = BR.map(function(q, k){ return shade(color, (q.a - .78) * .5 + (k % 3 === 0 ? .08 : 0)); }); }
+  function dab(a, b){
+    var dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy); if (d < .5) return;
+    stroke.run += d;
+    var load = Math.max(.1, 1 - stroke.run / CFG.LOAD_RUN), bw = (IS_PHONE() ? CFG.BRUSH_PHONE : CFG.BRUSH_DESK) * (.8 + .2 * load);
+    var nx = -dy / d, ny = dx / d, gap = bw / CFG.BRISTLES;
+    // wet body goes underneath what's already there, so it never cuts across this stroke's bristles
+    if (load > .45) { ctx.globalCompositeOperation = 'destination-over'; ctx.lineCap = 'round'; ctx.strokeStyle = color; ctx.lineWidth = bw * .82; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); ctx.globalCompositeOperation = 'source-over'; }
+    // each bristle is one continuous line: start where that bristle stopped last time, flat ends
+    ctx.lineCap = 'butt';
+    if (!stroke.tips) stroke.tips = [];
+    for (var k = 0; k < BR.length; k++) {
+      var q = BR[k], tip = {x: b.x + nx * q.o * bw, y: b.y + ny * q.o * bw}, from = stroke.tips[k] || {x: a.x + nx * q.o * bw, y: a.y + ny * q.o * bw};
+      stroke.tips[k] = tip;
+      if (Math.sin(k * 5.3 + 1.7) > load * 2.2 - .4) continue; // drying out: some bristles drop first, leaving streaks
+      ctx.strokeStyle = shades[k]; ctx.lineWidth = gap * q.w * (load > .45 ? 1.25 : .9);
+      ctx.beginPath(); ctx.moveTo(from.x, from.y); ctx.lineTo(tip.x, tip.y); ctx.stroke();
+    }
+  }
+  function pt(e){ return {x: e.clientX + scrollX, y: e.clientY + scrollY}; }
+  catcher.addEventListener('pointerdown', function(e){ size(); stroke = {last: pt(e), run: 0, id: e.pointerId}; try { catcher.setPointerCapture(e.pointerId); } catch (x) {} e.preventDefault(); });
+  catcher.addEventListener('pointermove', function(e){
+    if (!stroke || e.pointerId !== stroke.id) return;
+    var evs = e.getCoalescedEvents && e.getCoalescedEvents().length ? e.getCoalescedEvents() : [e];
+    for (var j = 0; j < evs.length; j++) { var p = pt(evs[j]); dab(stroke.last, p); stroke.last = p; }
+  });
+  function end(){ stroke = null; }
+  catcher.addEventListener('pointerup', end); catcher.addEventListener('pointercancel', end);
+  function pick(c){
+    color = c;
+    Array.prototype.forEach.call(daubs, function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-color') === c ? 'true' : 'false'); });
+    document.body.classList.toggle('painting', !!c);
+    stopBtn.hidden = !c;
+    if (c) { size(); loadShades(); }
+  }
+  Array.prototype.forEach.call(daubs, function(b){ b.addEventListener('click', function(){ var c = b.getAttribute('data-color'); pick(color === c ? null : c); }); });
+  stopBtn.addEventListener('click', function(){ pick(null); if (IS_PHONE()) { pal.classList.remove('open'); fab.setAttribute('aria-expanded', 'false'); } });
+  pal.querySelector('.wipe').addEventListener('click', function(){ ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height); ctx.restore(); });
+  fab.addEventListener('click', function(){ var o = !pal.classList.contains('open'); pal.classList.toggle('open', o); fab.setAttribute('aria-expanded', o ? 'true' : 'false'); if (!o) pick(null); });
+  addEventListener('keydown', function(e){ if (e.key === 'Escape' && color) pick(null); });
+  // on phones the brush button rides above the sticky Call | Text bar
+  new MutationObserver(function(){ pal.style.bottom = IS_PHONE() && !bar.classList.contains('on') ? 'calc(16px + env(safe-area-inset-bottom))' : ''; }).observe(bar, {attributes: true, attributeFilter: ['class']});
+  pal.style.bottom = IS_PHONE() ? 'calc(16px + env(safe-area-inset-bottom))' : '';
+  size(); addEventListener('resize', size);
+  if ('ResizeObserver' in window) new ResizeObserver(size).observe(document.body);
 })();
 
 if (REDUCED) LOOP.still(); else LOOP.wake();
