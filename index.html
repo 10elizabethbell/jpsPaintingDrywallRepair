@@ -645,14 +645,39 @@ function smoothPath(ctx, xs, ys){
     for (i = 0; i < W * H / 40; i++) { wc.fillStyle = r() < .5 ? 'rgba(90,75,55,.08)' : 'rgba(255,250,240,.12)'; wc.fillRect(r() * W, r() * H, 1.4, 1.4); }
     // taped seam, peeling
     wc.fillStyle = 'rgba(244,238,226,.55)'; wc.fillRect(W * .52, 0, m * .07, H);
-    // hole with torn paper rim and broken gypsum
-    var hx = W * .3, hy = H * .5, hr = m * .14, pts = [];
-    for (i = 0; i < 14; i++) { var a = i / 14 * 6.283, rr = hr * (.75 + r() * .4); pts.push([hx + Math.cos(a) * rr, hy + Math.sin(a) * rr * .9]); }
-    function poly(s){ wc.beginPath(); pts.forEach(function(p, j){ var x = hx + (p[0] - hx) * s, y = hy + (p[1] - hy) * s; j ? wc.lineTo(x, y) : wc.moveTo(x, y); }); wc.closePath(); }
-    poly(1.22); wc.fillStyle = '#f2ebde'; wc.fill();
-    poly(1.06); wc.fillStyle = '#e9e1cf'; wc.fill();
-    poly(1); var hg = wc.createRadialGradient(hx - hr * .3, hy - hr * .3, 0, hx, hy, hr); hg.addColorStop(0, '#3b3328'); hg.addColorStop(1, '#1f1b16'); wc.fillStyle = hg; wc.fill();
-    wc.fillStyle = 'rgba(230,222,205,.5)'; poly(.5); wc.save(); wc.clip(); wc.fillRect(hx - hr, hy + hr * .1, hr * 2, hr); wc.restore();
+    // punched-through hole: jagged break, torn face paper, chalky gypsum edge, dark cavity, crumbs
+    var hx = W * .3, hy = H * .5, hr = m * .14, h = rng(91);
+    for (i = 0; i < 14; i++) r(); // keeps the crack sequence below unchanged
+    function ring(n, rad, jag, sy){ var p = []; for (var j = 0; j < n; j++) { var a = j / n * 6.283, k = rad * (1 + (h() - .5) * jag * (j % 2 ? 1 : .7)); p.push([hx + Math.cos(a) * k, hy + Math.sin(a) * k * sy]); } return p; }
+    function shape(p){ wc.beginPath(); p.forEach(function(q, j){ j ? wc.lineTo(q[0], q[1]) : wc.moveTo(q[0], q[1]); }); wc.closePath(); }
+    function soft(){ wc.shadowColor = 'rgba(60,45,30,.35)'; wc.shadowBlur = 6; wc.shadowOffsetY = 2; }
+    var torn = ring(36, hr * 1.18, .3, .86), core = ring(30, hr, .32, .84);
+    // torn face paper, lifted off the wall
+    wc.save(); soft(); shape(torn); wc.fillStyle = '#ece3d1'; wc.fill(); wc.restore();
+    // broken gypsum: the board's chalky thickness shows on the top-left inside edge
+    shape(core); wc.fillStyle = '#f3efe6'; wc.fill();
+    wc.save(); shape(core); wc.clip();
+    for (i = 0; i < 160; i++) { wc.fillStyle = h() < .6 ? 'rgba(150,138,115,.35)' : 'rgba(255,255,255,.7)'; wc.fillRect(hx - hr * 1.2 + h() * hr * 2.4, hy - hr * 1.2 + h() * hr * 2.4, 1.6, 1.6); }
+    wc.restore();
+    var cav = core.map(function(q){ return [hx + (q[0] - hx) * .84 + hr * .1, hy + (q[1] - hy) * .84 + hr * .11]; });
+    var cg = wc.createLinearGradient(hx - hr, hy - hr, hx + hr * .7, hy + hr);
+    cg.addColorStop(0, '#0e0b08'); cg.addColorStop(.55, '#261f17'); cg.addColorStop(1, '#3d3326');
+    shape(cav); wc.fillStyle = cg; wc.fill();
+    // a flap of face paper hanging into the hole
+    var fx = hx + hr * .1, fy = hy + hr * .62;
+    wc.save(); soft(); wc.beginPath(); wc.moveTo(fx - hr * .32, fy + hr * .04); wc.lineTo(fx + hr * .26, fy - hr * .02);
+    wc.lineTo(fx + hr * .16, fy + hr * .34); wc.lineTo(fx + hr * .02, fy + hr * .26); wc.lineTo(fx - hr * .12, fy + hr * .4); wc.lineTo(fx - hr * .22, fy + hr * .22); wc.closePath();
+    wc.fillStyle = '#e4d9c3'; wc.fill(); wc.restore();
+    // gypsum dust and crumbs fallen below
+    var dg = wc.createRadialGradient(hx, hy + hr * 1.35, 0, hx, hy + hr * 1.35, hr * 1.1);
+    dg.addColorStop(0, 'rgba(248,244,236,.55)'); dg.addColorStop(1, 'rgba(248,244,236,0)');
+    wc.fillStyle = dg; wc.fillRect(hx - hr * 1.2, hy + hr * .8, hr * 2.4, hr * 1.2);
+    for (i = 0; i < 14; i++) {
+      var cx = hx + (h() - .5) * hr * 1.6, cy = hy + hr * (1.05 + h() * .5), cs = 1.5 + h() * 3.5;
+      wc.save(); soft(); wc.shadowBlur = 2; wc.shadowOffsetY = 1; wc.beginPath();
+      for (var j = 0; j < 5; j++) { var a2 = j / 5 * 6.283, k2 = cs * (.6 + h() * .6); j ? wc.lineTo(cx + Math.cos(a2) * k2, cy + Math.sin(a2) * k2) : wc.moveTo(cx + Math.cos(a2) * k2, cy + Math.sin(a2) * k2); }
+      wc.closePath(); wc.fillStyle = '#efe9dd'; wc.fill(); wc.restore();
+    }
     // cracks
     function crack(x, y, ang, len, w){
       wc.beginPath(); wc.moveTo(x, y);
