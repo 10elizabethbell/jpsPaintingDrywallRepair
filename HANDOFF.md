@@ -28,7 +28,7 @@ Muse couldn't read the Facebook page. The crawler user agent could: the profile 
 - How-it-works is titles only (Call or text / Free estimate / Fresh walls). No claims about site visits or turnaround times.
 
 ## Placeholders and gaps
-- **No photos of their work.** The only post photo is login-walled. The drywall demo fills the proof slot and is labeled "Try it" (it's an obvious illustration). **Photos wanted**, especially before/after drywall patches.
+- **One work photo.** The Oct 8 group post's photo came through its link preview: a small-business hallway with grey walls, white trim and blue doors (`src-assets/work-01.*`, provenance in the sidecar). It sits in the closing section as their "latest post", taped to the wall, with the post text word for word. It's static, so update it by hand when they post. That the photo shows their work is inferred from them posting it with their promo; confirm with the owner. **More photos wanted**, especially before/after drywall patches.
 - No reviews, prices, hours, years in business or email: the page says nothing about them.
 - The logo is a photo crop with levels adjusted so the sign's grey reads as cream. A clean vector of the seal would sharpen the hero and top bar.
 
