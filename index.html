@@ -159,8 +159,8 @@ p{margin:0}
 .close h2{color:var(--navy);font-size:clamp(2.3rem,10.5vw,4.8rem)}
 .close p{margin-top:14px;font-size:clamp(17px,4.6vw,20px);max-width:36ch}
 .close .btns{margin-top:22px}
-.fb{display:grid;grid-template-columns:52px 1fr 44px;align-items:center;gap:14px;margin-top:26px;max-width:560px;padding:14px 14px 14px 14px;border-radius:var(--radius);background:var(--wood);color:var(--navy-deep);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s cubic-bezier(.2,.8,.2,1);-webkit-tap-highlight-color:transparent}
-.fb .fb-mark{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--navy-deep);color:var(--plaster)}
+.fb{display:grid;grid-template-columns:46px 1fr 44px;align-items:center;gap:12px;margin-top:26px;max-width:560px;padding:14px 14px 14px 14px;border-radius:var(--radius);background:var(--wood);color:var(--navy-deep);text-decoration:none;box-shadow:var(--shadow);transition:transform .25s cubic-bezier(.2,.8,.2,1);-webkit-tap-highlight-color:transparent}
+.fb .fb-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--navy-deep);color:var(--plaster)}
 .fb .fb-mark svg{width:26px;height:26px}
 .fb b{display:block;font-weight:900;text-transform:uppercase;font-size:clamp(1.1rem,5.2vw,1.4rem);line-height:1.05;letter-spacing:0}
 .fb small{display:block;margin-top:3px;font-size:16px;font-weight:700}
@@ -186,6 +186,8 @@ footer .demo{margin-top:22px;padding-top:16px;border-top:1px solid rgba(201,211,
 }
 @media (min-width:900px){
   :root{--gutter:32px}
+  .fb{grid-template-columns:52px 1fr 44px;gap:14px}
+  .fb .fb-mark{width:52px;height:52px}
   .top{padding:18px var(--gutter)}
   .brand .seal{width:52px;height:52px}
   .brand b{font-size:16px}
@@ -366,7 +368,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
     <a class="fb" href="https://www.facebook.com/profile.php?id=61584162533872">
       <span class="fb-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z"/></svg></span>
-      <span><b>Check out our work!</b><small>On the JPS Facebook page</small></span>
+      <span><b>Check out our work!</b><small>On our Facebook page</small></span>
       <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
     </a>
   </div>
