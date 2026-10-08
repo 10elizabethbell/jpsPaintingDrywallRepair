@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T15:52:43.504083+00:00",
+  "title": "Design System: JPS Painting & Drywall Repair",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "Seal Navy",
+        "canonical": "oklch(34.4% 0.069 254)",
+        "tonalRamp": [
+          "#000a24",
+          "#0b2544",
+          "#284365",
+          "#486385",
+          "#6b84a5",
+          "#8fa7c7",
+          "#b4cbe9",
+          "#dbf1ff"
+        ]
+      },
+      "navy-mid": {
+        "role": "primary",
+        "displayName": "Stirred Navy",
+        "canonical": "oklch(40.7% 0.077 254)",
+        "tonalRamp": [
+          "#000925",
+          "#082546",
+          "#234369",
+          "#43638a",
+          "#6685aa",
+          "#8aa8cc",
+          "#b0ccee",
+          "#d7f1ff"
+        ]
+      },
+      "navy-deep": {
+        "role": "primary",
+        "displayName": "Deep Can Navy",
+        "canonical": "oklch(28.2% 0.067 258)",
+        "tonalRamp": [
+          "#000924",
+          "#0f2545",
+          "#2d4263",
+          "#4d6283",
+          "#6f84a3",
+          "#92a6c5",
+          "#b8cbe7",
+          "#def0ff"
+        ]
+      },
+      "wood": {
+        "role": "secondary",
+        "displayName": "Brush-Handle Wood",
+        "canonical": "oklch(68.6% 0.102 66)",
+        "tonalRamp": [
+          "#1d0300",
+          "#3d1b00",
+          "#5f3702",
+          "#845622",
+          "#aa763e",
+          "#d0985f",
+          "#f3bd88",
+          "#ffe4b1"
+        ]
+      },
+      "wood-lt": {
+        "role": "secondary",
+        "displayName": "Light Wood",
+        "canonical": "oklch(79.2% 0.090 71)",
+        "tonalRamp": [
+          "#190600",
+          "#371f00",
+          "#583b13",
+          "#7b5a2f",
+          "#a17a4b",
+          "#c79c67",
+          "#edc089",
+          "#ffe6b2"
+        ]
+      },
+      "wood-ink": {
+        "role": "secondary",
+        "displayName": "Wood Ink",
+        "canonical": "oklch(55.6% 0.098 62)",
+        "tonalRamp": [
+          "#1f0100",
+          "#3f1900",
+          "#623500",
+          "#875421",
+          "#ab7543",
+          "#cd996b",
+          "#f0be93",
+          "#ffe4bc"
+        ]
+      },
+      "plaster": {
+        "role": "neutral",
+        "displayName": "Plaster",
+        "canonical": "oklch(94.1% 0.017 85)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#27251f",
+          "#45423b",
+          "#656159",
+          "#868279",
+          "#a9a49b",
+          "#cec9be",
+          "#f4eee2"
+        ]
+      },
+      "plaster-2": {
+        "role": "neutral",
+        "displayName": "Plaster Shade",
+        "canonical": "oklch(89.2% 0.029 83)",
+        "tonalRamp": [
+          "#0f0b04",
+          "#29241b",
+          "#474136",
+          "#686053",
+          "#8a8172",
+          "#ada493",
+          "#d2c8b5",
+          "#f8edda"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "oklch(92.7% 0.026 85)",
+        "tonalRamp": [
+          "#0e0b05",
+          "#29251d",
+          "#464138",
+          "#666155",
+          "#888274",
+          "#aca495",
+          "#d1c8b8",
+          "#f6eedc"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(30.2% 0.062 255)",
+        "tonalRamp": [
+          "#000a22",
+          "#0e2542",
+          "#2c4361",
+          "#4c6381",
+          "#6e84a1",
+          "#92a7c3",
+          "#b7cbe5",
+          "#def0ff"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "oklch(48.1% 0.056 253)",
+        "tonalRamp": [
+          "#000b1d",
+          "#13263c",
+          "#2d445d",
+          "#4a6380",
+          "#6c85a1",
+          "#90a7c3",
+          "#b5cce6",
+          "#dcf1ff"
+        ]
+      },
+      "on-navy-2": {
+        "role": "neutral",
+        "displayName": "Navy Mist",
+        "canonical": "oklch(86.3% 0.020 253)",
+        "tonalRamp": [
+          "#080b10",
+          "#21262b",
+          "#3d434a",
+          "#5b626a",
+          "#7b838c",
+          "#9da6b0",
+          "#c0cad6",
+          "#e6f0fb"
+        ]
+      },
+      "on-navy": {
+        "role": "neutral",
+        "displayName": "Plaster (on navy)",
+        "canonical": "oklch(94.1% 0.017 85)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#27251f",
+          "#45423b",
+          "#656159",
+          "#868279",
+          "#a9a49b",
+          "#cec9be",
+          "#f4eee2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; uppercase."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s, uppercase; closing h2 steps up to clamp(2.3rem,10.5vw,4.8rem)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3s in service rows and paint chips, uppercase."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Hero pitch and closing paragraph, 34-36ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default copy; descriptions at 16px/1.45."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked labels: fact terms, brand subline, chip footer, demo tag (12-14px)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": "0 18px 40px -18px rgba(19,41,74,.45)",
+        "purpose": "Paint-chip card (--shadow)."
+      },
+      {
+        "name": "seal",
+        "value": "0 14px 30px -12px rgba(19,41,74,.6)",
+        "purpose": "Floating seal disc."
+      },
+      {
+        "name": "bar-lift",
+        "value": "0 -12px 30px -14px rgba(19,41,74,.7)",
+        "purpose": "Sticky phone bar casting upward."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-paint",
+        "value": "cubic-bezier(.2,.8,.2,1)",
+        "purpose": "All CSS transitions: button press (.2s), row arrow (.25s), sticky bar slide (.35s)."
+      },
+      {
+        "name": "press",
+        "value": "scale(.97)",
+        "purpose": "Button :active."
+      },
+      {
+        "name": "paint-spring",
+        "value": "STIFF 34, DAMP 5.2, PUSH 2600, CARRY 9, PUSH_R 70/120px",
+        "purpose": "Shared spring edge for hero band and dividers (CFG)."
+      },
+      {
+        "name": "ambient",
+        "value": "SPEED 1.0, SWELL 1.0 (x0.8 on phone)",
+        "purpose": "Ambient paint wave speed and height."
+      },
+      {
+        "name": "splash",
+        "value": "SPLASH_V 230, gravity 1500px/s2, max 40 drops",
+        "purpose": "Droplets flicked off the hero surface."
+      },
+      {
+        "name": "drips",
+        "value": "DRIPS 4/7, DRIP_MAX 46px",
+        "purpose": "Drip divider count and length."
+      },
+      {
+        "name": "roller",
+        "value": "ROLLER 46/64px, DONE_AT .86, demo stroke 1.6s",
+        "purpose": "Drywall roller demo."
+      },
+      {
+        "name": "reduced",
+        "value": "single still frame at t=2.3; transitions off",
+        "purpose": "prefers-reduced-motion behavior."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "base",
+        "value": "0 (phone)"
+      },
+      {
+        "name": "pair",
+        "value": "560px"
+      },
+      {
+        "name": "desk",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Call action on plaster; always first in the pair.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.4-2.1 1.4a11 11 0 0 0 5.9 6l1.4-2.1 4.5 1.6v3.3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z\"/></svg>Call for a free estimate</a>",
+      "css": ":host{--navy:#1e3a5c;--navy-mid:#2a4b72;--navy-deep:#13294a;--ink:#172f4d;--wood:#c58d52;--wood-lt:#e0b27a;--wood-ink:#9c6531;--plaster:#f1ebdf;--plaster-2:#e5dac6;--on-navy:#f1ebdf;--on-navy-2:#c9d3df;--ink-2:#47607d;--radius:18px;--shadow:0 18px 40px -18px rgba(19,41,74,.45);--font:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 22px;border-radius:999px;border:2px solid var(--navy);font:800 17px var(--font);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:transform .2s cubic-bezier(.2,.8,.2,1),background-color .2s} .ds-btn svg{width:20px;height:20px} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:3px solid var(--wood);outline-offset:3px} .ds-btn-primary{background:var(--navy);color:var(--plaster)} .ds-btn-primary:hover{background:var(--navy-mid)}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Text action on plaster; same outline and height as primary.",
+      "html": "<a class=\"ds-btn ds-btn-secondary\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5h16v11H9l-5 4V5Z\"/></svg>Text 609-312-3091</a>",
+      "css": ":host{--navy:#1e3a5c;--navy-mid:#2a4b72;--navy-deep:#13294a;--ink:#172f4d;--wood:#c58d52;--wood-lt:#e0b27a;--wood-ink:#9c6531;--plaster:#f1ebdf;--plaster-2:#e5dac6;--on-navy:#f1ebdf;--on-navy-2:#c9d3df;--ink-2:#47607d;--radius:18px;--shadow:0 18px 40px -18px rgba(19,41,74,.45);--font:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 22px;border-radius:999px;border:2px solid var(--navy);font:800 17px var(--font);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:transform .2s cubic-bezier(.2,.8,.2,1),background-color .2s} .ds-btn svg{width:20px;height:20px} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:3px solid var(--wood);outline-offset:3px} .ds-btn-secondary{background:transparent;color:var(--navy);font-variant-numeric:tabular-nums} .ds-btn-secondary:hover{background:rgba(30,58,92,.08)}"
+    },
+    {
+      "name": "Button Pair on Navy",
+      "kind": "button",
+      "refersTo": "button-primary-on-navy",
+      "description": "Primary becomes wood, secondary becomes plaster outline on navy-deep grounds (sticky bar, navy sections).",
+      "html": "<div class=\"ds-navy\"><a class=\"ds-btn ds-btn-p\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.4-2.1 1.4a11 11 0 0 0 5.9 6l1.4-2.1 4.5 1.6v3.3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z\"/></svg>Call</a><a class=\"ds-btn ds-btn-s\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5h16v11H9l-5 4V5Z\"/></svg>Text</a></div>",
+      "css": ":host{--navy:#1e3a5c;--navy-mid:#2a4b72;--navy-deep:#13294a;--ink:#172f4d;--wood:#c58d52;--wood-lt:#e0b27a;--wood-ink:#9c6531;--plaster:#f1ebdf;--plaster-2:#e5dac6;--on-navy:#f1ebdf;--on-navy-2:#c9d3df;--ink-2:#47607d;--radius:18px;--shadow:0 18px 40px -18px rgba(19,41,74,.45);--font:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 22px;border-radius:999px;border:2px solid var(--navy);font:800 17px var(--font);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:transform .2s cubic-bezier(.2,.8,.2,1),background-color .2s} .ds-btn svg{width:20px;height:20px} .ds-btn:active{transform:scale(.97)} .ds-btn:focus-visible{outline:3px solid var(--wood);outline-offset:3px} .ds-navy{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 16px;background:var(--navy-deep)} .ds-navy .ds-btn{min-height:52px;font-size:16px;padding:0 12px} .ds-btn-p{background:var(--wood);color:var(--navy-deep);border-color:var(--wood)} .ds-btn-p:hover{background:var(--wood-lt)} .ds-btn-s{background:transparent;color:var(--on-navy);border-color:var(--on-navy-2)} .ds-btn-s:hover{background:rgba(241,235,223,.08)}"
+    },
+    {
+      "name": "Offer Pill",
+      "kind": "chip",
+      "refersTo": "offer-pill",
+      "description": "The one offer, with the figure in a wood badge.",
+      "html": "<p class=\"ds-offer\"><i>10%</i> off for small businesses</p>",
+      "css": ":host{--navy:#1e3a5c;--navy-mid:#2a4b72;--navy-deep:#13294a;--ink:#172f4d;--wood:#c58d52;--wood-lt:#e0b27a;--wood-ink:#9c6531;--plaster:#f1ebdf;--plaster-2:#e5dac6;--on-navy:#f1ebdf;--on-navy-2:#c9d3df;--ink-2:#47607d;--radius:18px;--shadow:0 18px 40px -18px rgba(19,41,74,.45);--font:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif} .ds-offer{display:inline-flex;align-items:center;gap:8px;margin:0;padding:7px 14px 7px 8px;border-radius:999px;background:var(--plaster-2);color:var(--ink);font:800 15px var(--font)} .ds-offer i{font-style:normal;display:grid;place-items:center;min-width:44px;height:30px;padding:0 8px;border-radius:999px;background:var(--wood);color:var(--navy-deep);font-weight:900;font-size:14px}"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Tap row on navy that texts JPS about one service.",
+      "html": "<div class=\"ds-rows\"><a class=\"ds-row\" href=\"#\"><div><h3>Interior painting</h3><p>Inside your home or business.</p></div><span class=\"ds-go\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h13M13 6l6 6-6 6\"/></svg></span></a></div>",
+      "css": ":host{--navy:#1e3a5c;--navy-mid:#2a4b72;--navy-deep:#13294a;--ink:#172f4d;--wood:#c58d52;--wood-lt:#e0b27a;--wood-ink:#9c6531;--plaster:#f1ebdf;--plaster-2:#e5dac6;--on-navy:#f1ebdf;--on-navy-2:#c9d3df;--ink-2:#47607d;--radius:18px;--shadow:0 18px 40px -18px rgba(19,41,74,.45);--font:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif} .ds-rows{background:var(--navy-deep);padding:0 16px;font-family:var(--font)} .ds-row{display:grid;grid-template-columns:1fr 44px;gap:14px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(201,211,223,.18);color:var(--on-navy);text-decoration:none} .ds-row h3{margin:0;font-weight:900;text-transform:uppercase;font-size:1.5rem;line-height:.98} .ds-row p{margin:5px 0 0;color:var(--on-navy-2);font-size:16px;line-height:1.45} .ds-go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(241,235,223,.1);color:var(--wood-lt);transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .25s} .ds-go svg{width:18px;height:18px} .ds-row:hover .ds-go{transform:translateX(4px);background:var(--wood);color:var(--navy-deep)} .ds-row:focus-visible{outline:3px solid var(--wood);outline-offset:3px}"
+    },
+    {
+      "name": "Paint-Chip Card",
+      "kind": "card",
+      "refersTo": "paint-chip-card",
+      "description": "Numbered steps as a paint sample card graded light to dark.",
+      "html": "<ol class=\"ds-chip\"><li><span class=\"n\">1</span><h3>Call or text</h3></li><li><span class=\"n\">2</span><h3>Free estimate</h3></li><li><span class=\"n\">3</span><h3>Fresh walls</h3></li><li class=\"f\"><span>JPS</span><span>Barnegat, NJ</span></li></ol>",
+      "css": ":host{--navy:#1e3a5c;--navy-mid:#2a4b72;--navy-deep:#13294a;--ink:#172f4d;--wood:#c58d52;--wood-lt:#e0b27a;--wood-ink:#9c6531;--plaster:#f1ebdf;--plaster-2:#e5dac6;--on-navy:#f1ebdf;--on-navy-2:#c9d3df;--ink-2:#47607d;--radius:18px;--shadow:0 18px 40px -18px rgba(19,41,74,.45);--font:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif} .ds-chip{margin:0;padding:0;list-style:none;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-family:var(--font)} .ds-chip li{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:center;padding:22px 20px} .ds-chip li:nth-child(1){background:#dfe5ec;color:var(--ink)} .ds-chip li:nth-child(2){background:#7d93ad;color:#0f2340} .ds-chip li:nth-child(3){background:var(--navy);color:var(--on-navy)} .ds-chip .n{font-weight:900;font-size:2.4rem;line-height:.9;font-variant-numeric:tabular-nums} .ds-chip h3{margin:0;font-weight:900;text-transform:uppercase;font-size:1.5rem;line-height:.98} .ds-chip li.f{display:flex;justify-content:space-between;padding:12px 20px;background:var(--plaster);color:var(--ink-2);font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}"
+    },
+    {
+      "name": "Top Bar",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Seal + wordmark and circular call button (phone); call widens to a pill with the number at 900px.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-seal\"></span><b>JPS Painting &amp; Drywall Repair <span>Barnegat, NJ</span></b></a><a class=\"ds-call\" href=\"#\" aria-label=\"Call\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3.5h3.2l1.6 4.4-2.1 1.4a11 11 0 0 0 5.9 6l1.4-2.1 4.5 1.6v3.3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z\"/></svg></a></header>",
+      "css": ":host{--navy:#1e3a5c;--navy-mid:#2a4b72;--navy-deep:#13294a;--ink:#172f4d;--wood:#c58d52;--wood-lt:#e0b27a;--wood-ink:#9c6531;--plaster:#f1ebdf;--plaster-2:#e5dac6;--on-navy:#f1ebdf;--on-navy-2:#c9d3df;--ink-2:#47607d;--radius:18px;--shadow:0 18px 40px -18px rgba(19,41,74,.45);--font:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif} .ds-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--plaster);color:var(--ink);font-family:var(--font)} .ds-brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none} .ds-seal{width:44px;height:44px;border-radius:50%;background:var(--navy);flex:none} .ds-brand b{font-weight:900;text-transform:uppercase;font-size:14px;line-height:1.1} .ds-brand b span{display:block;font-weight:700;color:var(--ink-2);font-size:12px;letter-spacing:.04em} .ds-call{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:2px solid var(--navy);color:var(--navy)} .ds-call svg{width:22px;height:22px} .ds-call:focus-visible{outline:3px solid var(--wood);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Stirred Can",
+    "overview": "The page is wet paint, not a brochure about paint. Its whole palette is lifted from the JPS seal (navy, brush-handle wood, plaster cream) and poured into one can: the hero ends in a living band of marbled paint the visitor can push with a finger, every navy section is joined to the plaster page by a paint edge that drips or rises, and the steps sit on a paint-chip card. The real seal floats in the paint, bobbing and tilting with the surface.\n\nIt is built for a thumb inside Facebook's in-app browser on cellular: one file, system fonts, no raster except the inlined seal, everything sized for a phone first and adapted upward at 560px and 900px. The voice is plain and heavy: uppercase 900-weight headings in a rounded system face echo the seal's lettering; body copy is short and set large (17px).\n\nDepth comes from paint, not chrome. Grounds alternate plaster and deep navy; the only shadows are soft, navy-tinted and long. There is no black anywhere in the palette.",
+    "keyCharacteristics": [
+      "Two grounds only: plaster (light) and navy-deep (dark), joined by animated paint edges.",
+      "Wood is the accent: emphasis words, the offer badge, primary buttons on navy, focus rings.",
+      "Heavy uppercase rounded system sans for every heading; tabular numerals for the phone number.",
+      "Pill buttons in a primary/secondary pair that share outline and height.",
+      "One shared pointer and one rAF loop drive all paint motion; everything springs back."
+    ],
+    "rules": [
+      {
+        "name": "The Never-Black Rule",
+        "body": "The darkest ground is `navy-deep`. No `#000`, no near-black, no grey grounds. Shadows are tinted `rgba(19,41,74,…)`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Wood-Means-Act Rule",
+        "body": "On navy, the primary action is always wood on navy-deep; on plaster it is navy on plaster. Wood text on plaster must use `wood-ink`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shout-Then-Talk Rule",
+        "body": "Headings are 900 uppercase with tight leading (≤0.98); body is never bold-uppercase. Bold (800) inside body is reserved for facts the visitor must catch (bonded & insured, 10% off).",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Number Rule",
+        "body": "The phone number and license always carry `font-variant-numeric: tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paint-Is-Depth Rule",
+        "body": "New layering comes from paint over or under an object, not from new shadows or borders.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** reuse the hero paint band, the drip/rise dividers, and their spring behavior exactly on any new page, driven by the same `CFG`, shared pointer, and single loop. Don't fork the simulation per page.",
+      "**Do** join every navy section to plaster with a drip (navy above) or rise (navy below) divider filled `navy-deep`.",
+      "**Do** keep Call primary and Text secondary, in that order, with pre-filled `sms:` bodies.",
+      "**Do** design at phone width first; add only `min-width: 560px` and `min-width: 900px` adaptations.",
+      "**Do** keep every tap target at least 44px (buttons 52–56px).",
+      "**Do** keep a still, non-JS fallback for any new paint surface and a single-frame render under reduced motion."
+    ],
+    "donts": [
+      "**Don't** use black or grey grounds, black text, or black shadows; the darkest value is `navy-deep`.",
+      "**Don't** draw thin light highlight lines on paint crests or edges; wet sheen is broad and soft (9px+ strokes at about 10% alpha) or a gradient stop.",
+      "**Don't** separate sections with straight edges or rules; the boundary is paint.",
+      "**Don't** add a second accent color or a web font; the palette is the seal's and the type is the system stack.",
+      "**Don't** put wood text directly on plaster except `wood-ink`.",
+      "**Don't** add stock photography, icon-card grids, or testimonial carousels; the only image is the seal."
+    ]
+  }
+}
