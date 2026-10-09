@@ -1,13 +1,13 @@
 # JPS Painting & Drywall Repair LLC — handoff at ~60%
 
-**Live file:** index.html (single file, ~86 KB, ~30 KB of it the seal image) · **Repo:** https://github.com/10elizabethbell/jpsPaintingDrywallRepair · **Built:** 2026-10-08 from Muse brief of 2026-10-08 (Facebook group post, "NJ Seeking Contractors")
+**Live file:** index.html (single file, ~140 KB / ~72 KB gzipped; ~50 KB of it the seal and work photo) + og.png (link preview) · **Repo:** https://github.com/10elizabethbell/jpsPaintingDrywallRepair · **Built:** 2026-10-08 from Muse brief of 2026-10-08 (Facebook group post, "NJ Seeking Contractors")
 
 ## What's built
 - **World: a stirred can of wet paint** in the seal's own colors (navy, brush-handle wood, plaster cream). Ground is plaster cream; dark sections are deep navy `#13294a`, not black.
-- **Signature motion:** the hero ends in a band of marbled paint on canvas: four navy layers with a soft wet sheen, plus wood and cream streaks that swell, pinch to nothing and cross under and over them. Mouse or finger shoves and drags the paint, it springs back with a wobble, and a hard upward flick throws droplets that fall back in and dent the surface. The real JPS seal floats in the paint, bobbing and tilting with the surface (two canvases, so paint laps over its base).
+- **Signature motion:** the hero ends in a band of marbled paint on canvas: four navy layers with a soft wet sheen, plus wood and cream streaks that swell, pinch to nothing and cross under and over them. Mouse or finger shoves and drags the paint, it springs back with a wobble, and a hard upward flick throws droplets that fall back in and dent the surface. The real JPS seal floats in the paint, bobbing and tilting with the surface (two canvases, so paint laps over its base). It surfaces out of the paint on load with a splash, dunks when tapped, and scrolling sloshes the can.
 - **Carried everywhere:** section dividers are live paint edges. Navy drips grow, drop a bead and pull back, and the pointer sways them. Rising wavy edges lead into the navy sections.
-- **Sections:** hero ("Fresh paint. Smooth walls.", pitch line, "10% off for small businesses" pill, Call + Text) → services (4 rows; each whole row is a pre-filled text) + **drywall demo** (a damaged wall you roll fresh paint over; one auto-stroke plays the first time it scrolls into view) → how it works (a paint-chip card, three one-line steps) → local to Barnegat (owner, license, bonded and insured, phone, big seal) → close (Call / Text / Facebook) → footer with "Demo one-pager — free sample."
-- **Paint the page:** pick one of four site colours (navy, tan, slate, cream) and paint anywhere on the site with a bristle brush that runs dry. Paint sits under the text and buttons. Desktop: colours in a column on the right; drag to paint, click the colour again or press Esc to stop. Phone: a brush button opens the colours; while a colour is picked, drags paint instead of scrolling, and ✕ stops. Wipe clears it all.
+- **Sections:** hero ("Fresh paint. Smooth walls.", pitch line, "10% off" brushed on in tan, "for small businesses", Call + Text) → services (4 rows; each whole row is a pre-filled text) + **drywall demo** (a damaged wall you roll fresh paint over; one auto-stroke plays the first time it scrolls into view) → how it works (a paint-chip card, three one-line steps) → local to Barnegat (owner, license, bonded and insured, phone, big seal) → close (Call / Text / Facebook) → footer with "Demo one-pager — free sample."
+- **Paint the page:** pick one of four site colours (navy, tan, slate, cream) and paint anywhere on the site with a bristle brush that runs dry. Paint sits under the text and buttons. Wide screens (1300px+): colours docked in the right margin under a "Paint" label; drag to paint, click the colour again or press Esc to stop. Narrower: a brush button (with a one-time "Paint the page" label) opens the colours; while a colour is picked, drags paint instead of scrolling, and ✕ stops. Loaded strokes grow little drips that run and stop on a bead. Wipe clears it all (greyed out until there's paint).
 - **Contact:** `tel:+16093123091` is primary everywhere; `sms:` with pre-filled bodies per service is secondary; Facebook page link in the close. On phones a sticky Call | Text bar appears once the hero buttons scroll away and hides at the close section.
 - Tunables are at the top of the script in `CFG` (speed, swell, push radius and force, spring, drip count and length, roller size).
 
@@ -42,6 +42,7 @@ Muse couldn't read the Facebook page. The crawler user agent could: the profile 
 7. Anything else you do: ceilings, trim, cabinets, power washing, wallpaper removal? (Not listed on the page because it's not confirmed.)
 
 ## Ideas not built (yours to pick)
+- From the Impeccable pass, not built: wet "dab" bloom on Call/Text press; paint chip rolling on as it scrolls in; taped photo pressing onto the wall; Undo after Wipe; tilt-the-phone levelling. The chip-card footer ("JPS / Barnegat, NJ") was flagged as filler; left for you. "Check out our work!" is the page's only first-person line and there's one confirmed work photo; your call.
 - **Runner-up world: drywall mud & trowel.** A wall of cracks in the hero that your finger skims smooth with joint compound, and wet mud ridges as dividers. Closer to the "repair" half and more unusual, but less colorful than the paint can.
 - Before/after sliders in the services rows once photos exist (taste §4 recipe).
 - `book.html` estimate form composed into a text (needs an email/phone confirmation of texting).
@@ -52,6 +53,14 @@ Muse couldn't read the Facebook page. The crawler user agent could: the profile 
 - Google Business Profile setup: they have no Maps listing, which is a bigger lead source than the site. Worth pitching alongside it.
 
 ## Review round
+**Full Impeccable pass (2026-10-08, after Ellie's tuning):** critique (23/32), audit (15/20), harden, optimize, adapt, layout, typeset, polish, clarify, onboard, distill, bolder, quieter, colorize, animate, delight, overdrive, then document. Applied in one batch:
+- Bugs: hidden painting tip and sticky bar leaked shadows onto the first screen; phone toolbar show/hide (a resize) wiped the drywall demo and reset the paint; the page canvas made the page permanently taller after rotating; the docked palette covered content at 900–1300px; focus ring was 2.4:1 on plaster; brush button vanished on navy.
+- Perf: page canvas allocated only when someone paints (was ~31 MB on every load); wall coverage reads a 64×48 thumbnail; idle wall stops the frame loop.
+- Layout: tablet two-column splits from 720px; landscape phones keep pitch and buttons on screen; close buttons no longer wrap at 900–1100; desktop close column is sticky; hero headline two lines on tablet/desktop.
+- Copy: close buttons match the hero; About lede no longer claims a process ("fixed right before the paint goes on"); "Coverage" → "Insurance"; dropped the repeated "Estimates: Free" row; post text no longer in quote marks (it's tidied, not verbatim); photo alt no longer asserts it's JPS's work; wall instructions fixed for phones.
+- Kept on purpose: FB card shadow (Ellie asked for it to stand out); seal 70%; brushstroke label; hero line.
+
+First round:
 One Impeccable finish review (2026-10-08). Applied all 8 material fixes:
 - The sticky bar was unreadable (navy on navy).
 - The 10% claim was broader than the post.
@@ -63,6 +72,8 @@ One Impeccable finish review (2026-10-08). Applied all 8 material fixes:
 - The paint band read as waves, not paint (marbling and sheen added).
 
 ## Not verified
+- Seal dunk, scroll slosh and paint runs feel on a real phone (tuned headless only). Tilt-to-level was skipped (iOS needs a permission prompt).
+- og.png is a static capture of the desktop hero; Facebook caches previews, so re-scrape at developers.facebook.com/tools/debug after changes.
 - Paint the page on a real phone: brush mode blocks scrolling until ✕ (by design). Check that this reads clearly in Facebook's in-app browser. Painting navy over the navy headline hides the headline until it's wiped.
 - Real-device touch (iOS Safari, Android Chrome, Facebook in-app browser): tested only with simulated touch events in headless Chrome.
 - `sms:` pre-filled body on real iOS/Android; `tel:` handoff.
