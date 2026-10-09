@@ -1,6 +1,6 @@
 # JPS Painting & Drywall Repair LLC — handoff at ~60%
 
-**Live file:** index.html (single file, ~140 KB / ~72 KB gzipped; ~50 KB of it the seal and work photo) + og.png (link preview) · **Repo:** https://github.com/10elizabethbell/jpsPaintingDrywallRepair · **Built:** 2026-10-08 from Muse brief of 2026-10-08 (Facebook group post, "NJ Seeking Contractors")
+**Live file:** index.html (single file, ~140 KB / ~72 KB gzipped; ~50 KB of it the seal and work photo) + og.png (link preview) + favicon.png / apple-touch-icon.png (the seal, round) · **Repo:** https://github.com/10elizabethbell/jpsPaintingDrywallRepair · **Built:** 2026-10-08 from Muse brief of 2026-10-08 (Facebook group post, "NJ Seeking Contractors")
 
 ## What's built
 - **World: a stirred can of wet paint** in the seal's own colors (navy, brush-handle wood, plaster cream). Ground is plaster cream; dark sections are deep navy `#13294a`, not black.
