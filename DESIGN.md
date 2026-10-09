@@ -342,7 +342,7 @@ Under `prefers-reduced-motion: reduce` the loop never starts: the band and every
 - **Do** design at phone width first; adapt only at `min-width` 560, 720, 900 and 1300px.
 - **Do** keep every tap target at least 44px (buttons 52–56px).
 - **Do** keep a still, non-JS fallback for any new paint surface and a single-frame render under reduced motion.
-- **Do** keep the footer's honest demo line: "Demo one-pager — free sample."
+- **Do** keep the footer to facts: name, area, phone, license
 
 ### Don't:
 - **Don't** use black or grey grounds, black text, or black shadows; the darkest value is `navy-deep`.
