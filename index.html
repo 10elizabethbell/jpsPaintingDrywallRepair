@@ -218,15 +218,11 @@ a[href^="tel"],footer li{font-variant-numeric:tabular-nums}
 @media (hover:hover){.fb:hover .go{transform:translateX(4px)}}
 
 /* ===== Footer ===== */
-footer{padding:34px 0 120px;font-size:15px}
+footer{padding:34px 0 96px;font-size:15px}
 footer .name{font-weight:900;text-transform:uppercase;font-size:18px;line-height:1.15}
 footer ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:6px;color:var(--on-navy-2)}
 footer a{color:var(--on-navy)}
 
-/* ===== Sticky thumb bar (phones) ===== */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:var(--navy-deep);transform:translateY(calc(100% + 24px));transition:transform .2s cubic-bezier(.4,0,1,1)}
-.bar.on{transform:none;box-shadow:0 -12px 30px -14px rgba(19,41,74,.7);transition:transform .38s cubic-bezier(.16,1,.3,1)}
-.bar .btn{min-height:52px;font-size:16px;padding:0 12px}
 
 /* ===== Desktop adaptations ===== */
 @media (min-width:560px){
@@ -271,7 +267,6 @@ footer a{color:var(--on-navy)}
   .about-grid{gap:60px}
   .close{padding:0 0 110px}
   footer{padding-bottom:50px}
-  .bar{display:none}
 }
 @media (min-width:900px) and (max-width:1099px){.close .btns{grid-template-columns:1fr;max-width:420px}}
 
@@ -280,7 +275,7 @@ footer a{color:var(--on-navy)}
 .catch{position:fixed;inset:0;z-index:30;display:none;touch-action:none;cursor:crosshair}
 body.painting .catch{display:block}
 body.painting{user-select:none;-webkit-user-select:none}
-.palette{position:fixed;z-index:45;right:10px;bottom:calc(84px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:10px;transition:bottom .35s cubic-bezier(.2,.8,.2,1)}
+.palette{position:fixed;z-index:45;right:10px;bottom:calc(16px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:10px;transition:bottom .35s cubic-bezier(.2,.8,.2,1)}
 .palette .daubs{display:none;flex-direction:column;align-items:center;gap:10px;padding:10px 7px;border-radius:999px;background:var(--plaster-2);box-shadow:0 0 0 2px var(--navy),0 14px 30px -12px rgba(19,41,74,.7)}
 .palette.open .daubs{display:flex}
 .palette.open .daub{animation:squeeze .34s cubic-bezier(.16,1,.3,1) backwards}
@@ -311,7 +306,7 @@ body.painting .paint-tip{transform:translate(-50%,0);visibility:visible;transiti
   .palette .fab,.fab-hint{display:none}
   .pal-label{display:block}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.go,.bar,.bar.on,.palette,.paint-tip,.daub,.fb,.taped,.fab-hint{transition-property:background-color,color,opacity,visibility;transition-duration:.15s}.btn:active,.fb:active,.row:active .go{transform:none}.palette.open .daub,.swash::before{animation:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.go,.palette,.paint-tip,.daub,.fb,.taped,.fab-hint{transition-property:background-color,color,opacity,visibility;transition-duration:.15s}.btn:active,.fb:active,.row:active .go{transform:none}.palette.open .daub,.swash::before{animation:none}}
 </style>
 </head>
 <body>
@@ -319,7 +314,7 @@ body.painting .paint-tip{transform:translate(-50%,0);visibility:visible;transiti
 THESIS: A painter's site that is wet paint, not a brochure about paint. Refuses the contractor template (stock-photo hero, icon-card services grid, testimonial carousel).
 OWN-WORLD: The JPS seal's own palette — navy, brush-handle wood, plaster cream — as a stirred can of glossy paint. Marbled paint ribbons, dripping paint edges between sections, a paint-chip card for steps, the real seal dipped in paint. Heavy uppercase system sans, like the seal's lettering.
 STORY: A Barnegat homeowner or shop owner sees who JPS is (painting + drywall, bonded, insured, free estimates, 10% off), touches the paint, rolls a damaged wall smooth, and calls or texts 609-312-3091.
-FIRST VIEWPORT: Phone: wordmark bar + call icon; "Fresh paint. Smooth walls." at ~52px; one-line pitch; 10% offer pill; Call (primary) and Text buttons full width; the paint band with the seal sunk in it at the bottom edge. Desktop: same, headline at 6rem left, 300px seal riding the paint right.
+FIRST VIEWPORT: Phone: wordmark bar; "Fresh paint. Smooth walls." at ~52px; one-line pitch; 10% offer pill; Call (primary) and Text buttons full width; the paint band with the seal sunk in it at the bottom edge. Desktop: same, headline at 6rem left, 300px seal riding the paint right.
 FORM: 1 of 6 (wet paint can) — runner-up: drywall mud & trowel. No concept-seed roll: unattended pitch-site build, world chosen from the trade.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 -->
@@ -484,12 +479,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 3.5l6 6-7.5 7.5-6-6z"/><path d="M7 11l-2.6 2.6c-1 1-.7 2.3-1.9 3.5 2.2.9 4.6.6 6-0.8L11 13.8"/></svg>
   </button>
 </div>
-<div class="bar navy" id="bar" aria-hidden="true">
-  <a class="btn btn-primary" href="tel:+16093123091" tabindex="-1">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.4-2.1 1.4a11 11 0 0 0 5.9 6l1.4-2.1 4.5 1.6v3.3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>Call</a>
-  <a class="btn btn-secondary sms" href="sms:+16093123091" tabindex="-1" data-msg="Hi JPS! I'd like a free estimate.&#10;Town: &#10;What needs doing: ">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/></svg>Text</a>
-</div>
 
 <script>
 /* ============================================================
@@ -525,22 +514,6 @@ var CFG = {
   for (var i = 0; i < links.length; i++) {
     links[i].href = 'sms:' + CFG.PHONE + '?&body=' + encodeURIComponent(links[i].getAttribute('data-msg'));
   }
-})();
-
-/* ===== Sticky thumb bar: shows once the hero buttons scroll away, hides at the close ===== */
-(function(){
-  var bar = document.getElementById('bar');
-  if (!('IntersectionObserver' in window)) { bar.classList.add('on'); return; }
-  var seen = {hero: true, close: false};
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ seen[e.target.id === 'hero-btns' ? 'hero' : 'close'] = e.isIntersecting; });
-    var on = !seen.hero && !seen.close;
-    bar.classList.toggle('on', on);
-    bar.setAttribute('aria-hidden', on ? 'false' : 'true');
-    bar.querySelectorAll('a').forEach(function(a){ a.tabIndex = on ? 0 : -1; });
-  });
-  io.observe(document.getElementById('hero-btns'));
-  io.observe(document.getElementById('close-btns'));
 })();
 
 /* ===== Shared pointer (mouse + finger) and one animation loop ===== */
@@ -949,7 +922,7 @@ function smoothPath(ctx, xs, ys){
 (function(){
   var cv = document.getElementById('wallpaint'), ctx = cv.getContext('2d');
   var catcher = document.getElementById('catch'), pal = document.getElementById('palette');
-  var daubs = pal.querySelectorAll('.daub'), fab = pal.querySelector('.fab'), stopBtn = pal.querySelector('.stop'), wipe = pal.querySelector('.wipe'), bar = document.getElementById('bar'), tip = document.getElementById('paint-tip');
+  var daubs = pal.querySelectorAll('.daub'), fab = pal.querySelector('.fab'), stopBtn = pal.querySelector('.stop'), wipe = pal.querySelector('.wipe'), tip = document.getElementById('paint-tip');
   var DOCKED = function(){ return innerWidth >= 1300; }; // wide screens: colours sit in the margin; narrower: the brush button
   var color = null, scale = 1, W = 0, H = 0, stroke = null;
   // each swatch is a paint daub with a drip, drawn in its own color
@@ -1040,14 +1013,13 @@ function smoothPath(ctx, xs, ys){
   function showHint(){ if (hinted || DOCKED() || pal.classList.contains('open')) return; hinted = true; pal.classList.add('hint'); hintT = setTimeout(hideHint, 4500); }
   fab.addEventListener('click', function(){ hideHint(); hinted = true; var o = !pal.classList.contains('open'); pal.classList.toggle('open', o); fab.setAttribute('aria-expanded', o ? 'true' : 'false'); if (!o) pick(null); });
   addEventListener('keydown', function(e){ if (e.key === 'Escape' && color) pick(null); });
-  // on phones the brush button rides above the sticky Call | Text bar
-  new MutationObserver(function(){
-    var on = bar.classList.contains('on');
-    pal.style.bottom = IS_PHONE() && !on ? 'calc(16px + env(safe-area-inset-bottom))' : '';
-    if (on) setTimeout(showHint, 600);
-  }).observe(bar, {attributes: true, attributeFilter: ['class']});
   pal.style.bottom = IS_PHONE() ? 'calc(16px + env(safe-area-inset-bottom))' : '';
-  if (!IS_PHONE()) setTimeout(showHint, 2500);
+  // phones: the label shows once the hero buttons scroll away; elsewhere after a short wait
+  var heroBtns = document.getElementById('hero-btns');
+  if (IS_PHONE()) {
+    var past = function(){ if (heroBtns.getBoundingClientRect().bottom < 0) { removeEventListener('scroll', past); setTimeout(showHint, 600); } };
+    addEventListener('scroll', past, {passive: true});
+  } else setTimeout(showHint, 2500);
   // the page-sized canvas costs memory, so it isn't allocated until someone picks a colour
   function resized(){ if (W) size(); }
   addEventListener('resize', resized);

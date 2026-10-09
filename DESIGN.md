@@ -161,9 +161,6 @@ components:
   paint-brush-button-open:
     backgroundColor: "{colors.wood}"
     textColor: "{colors.navy-deep}"
-  sticky-bar:
-    backgroundColor: "{colors.navy-deep}"
-    padding: "10px 16px"
 ---
 
 # Design System: JPS Painting & Drywall Repair
@@ -191,7 +188,7 @@ A three-material palette (navy, wood, plaster) sampled from the seal, with navy 
 
 ### Primary
 - **Seal Navy** (`navy`): headings on plaster, primary button fill on plaster, button outlines, the focus ring on plaster, the call icon ring, the brush button, the paint band's top and middle bands, the third paint-chip step, text selection.
-- **Deep Can Navy** (`navy-deep`): every dark section ground (services, about, footer, sticky bar), the paint band's bottom fill, the `data-fill` of every drip/rise divider, the daub outlines, the Facebook mark and arrow discs, the paint tip and hint pills. This is the darkest value in the system.
+- **Deep Can Navy** (`navy-deep`): every dark section ground (services, about, footer), the paint band's bottom fill, the `data-fill` of every drip/rise divider, the daub outlines, the Facebook mark and arrow discs, the paint tip and hint pills. This is the darkest value in the system.
 - **Stirred Navy** (`navy-mid`): primary button hover on plaster, a mid band in the paint.
 
 ### Secondary
@@ -238,7 +235,7 @@ A three-material palette (navy, wood, plaster) sampled from the seal, with navy 
 - **Offer swash** (900, 21px, navy-deep on wood): "10% off" only.
 - **Meta** (800 15px name / 700 14px source): the Facebook post byline; the footer business name is 900 uppercase 18px.
 - **Label** (700–800, 12–14px, 0.04–0.06em, uppercase): fact terms (14px), the brand subline (12px), the paint-chip footer strip (13px), the demo's "Try it" tag and the Wipe tool (12px).
-- **Button** (800, 17px; 16px in the sticky bar and wall mode button, 14px reset and tip/hint pills; 0.01em).
+- **Button** (800, 17px; 16px in the wall mode button, 14px reset and tip/hint pills; 0.01em).
 
 ### Named Rules
 **The Shout-Then-Talk Rule.** Headings are 900 uppercase with tight leading (≤0.98, 1.05 in the callout); body is never bold-uppercase. Bold (800) inside body is reserved for facts the visitor must catch (bonded & insured, free estimates, 10% off).
@@ -251,7 +248,7 @@ Phone is the base stylesheet. Content sits in a 1180px max container whose gutte
 
 - **560px:** button pairs go from full-width stacked to two auto-width buttons side by side; the band grows (200 to 240px, head 60 to 70px) and the hero seal grows from 124px to 180px.
 - **720px:** two-column splits begin: services splits 1.05fr / 1fr (gap 40px) with the drywall demo sticky at top 30px; the paint chip becomes three columns with the footer strip spanning; about splits 1.2fr / 1fr with the seal up to 320px.
-- **900px:** top nav appears and the call icon becomes a pill with the number; the band reaches 300px (head 90px) with a 300px seal riding it at the right of the container; the close splits 1.2fr / 1fr (gap 64px) with its left column sticky at top 40px; the sticky bar is removed. Between 900 and 1099px the closing buttons stack (max 420px).
+- **900px:** top nav appears on the right; the band reaches 300px (head 90px) with a 300px seal riding it at the right of the container; the close splits 1.2fr / 1fr (gap 64px) with its left column sticky at top 40px. Between 900 and 1099px the closing buttons stack (max 420px).
 - **1300px:** the paint palette docks in the right margin, clear of the 1180px content.
 - **Landscape phones** (max-height 500px): top bar and hero padding tighten and the hero buttons sit 14px under the offer so the first screen keeps the pitch and the buttons.
 
@@ -267,7 +264,6 @@ Depth is paint layering first: the hero band draws on two canvases with the seal
 - **Taped print** (`0 20px 40px -18px rgba(19,41,74,.5)`): the taped job photo; the tape strips cast `0 2px 4px rgba(19,41,74,.18)`.
 - **Float** (`0 14px 30px -12px rgba(19,41,74,.7)`): fixed paint tools: the palette pill, the paint tip, the hint label (the brush button runs .75, the wall mode button .8).
 - **Wall frame** (`0 22px 44px -20px rgba(8,20,38,.6)`): the drywall demo, the one shadow cast onto the navy ground.
-- **Bar lift** (`0 -12px 30px -14px rgba(19,41,74,.7)`): the sticky phone bar, casting upward.
 
 ### Named Rules
 **The Paint-Is-Depth Rule.** New layering comes from paint over or under an object, not from new shadows or borders.
@@ -280,7 +276,7 @@ Everything a finger touches is a pill (999px) or a circle: buttons, the reset an
 
 ### Buttons
 Thick, confident pills; one component in two roles.
-- **Shape:** full pill (999px), 2px outline on both variants, min height 56px (52px in the sticky bar), 22px side padding, 20px stroke icon + label, 10px gap.
+- **Shape:** full pill (999px), 2px outline on both variants, min height 56px, 22px side padding, 20px stroke icon + label, 10px gap.
 - **Primary (on plaster):** navy fill, plaster text; hover navy-mid.
 - **Secondary (on plaster):** transparent, navy text and outline; hover 8% navy wash.
 - **On navy:** primary becomes wood fill with navy-deep text and wood outline (hover wood-lt); secondary becomes plaster text with navy-mist outline (hover 8% plaster wash).
@@ -299,11 +295,8 @@ The steps list styled as a paint sample card: 18px radius, card shadow, three sw
 ### Facebook Callout and Taped Photo
 The closing column's second half. The callout is a wood card (18px, card shadow) on a 46px / 1fr / 44px grid (52px mark at 900): a navy-deep disc with the plaster Facebook mark, a 900 uppercase title with a 16px 700 subline, and a navy-deep arrow disc with a light-wood arrow at rest that slides 4px on hover; press scales .98. Below it, JPS's latest job photo is a print taped to the wall: photo-paper border (10px padding), two painter's-tape strips (80 × 28px at -34deg and 30deg) over the top corners, rotated -1.4deg and straightening on hover, with a seal byline and the post's text.
 
-### Sticky Phone Bar
-Fixed bottom bar on navy-deep with Call (primary) and Text (secondary) in two equal columns, safe-area padded. Hidden (translated 100% + 24px) while the hero buttons or closing buttons are on screen. It enters in 0.38s `cubic-bezier(.16,1,.3,1)` and exits faster, 0.2s `cubic-bezier(.4,0,1,1)`; removed at 900px. When hidden its links leave the tab order.
-
 ### Navigation
-Phone: seal (44px) + two-line wordmark (900 uppercase 14px, subline 12px ink-muted) and a 48px circular call button. Desktop: 52px seal, 16px wordmark, inline 800-weight text nav (underline on hover), call button widens to a pill with the number.
+Phone: seal (44px) + two-line wordmark (900 uppercase 14px, subline 12px ink-muted), nothing else. Desktop: 52px seal, 16px wordmark, inline 800-weight text nav (17px, 36px gaps, underline on hover) on the right. No call button in the header: the hero's Call/Text pair is the only one on the first screen.
 
 ### Signature: Hero Paint Band
 A stirred can drawn on two canvases from one simulation. `BANDS` (top to bottom) is `[color, highlight, thickness share, wave amp, wavenumber, speed]`: navy, wood, navy-mid, cream, navy, wood-lt, navy-deep (the last fills to the bottom). Bands 1, 3, 5 are **streaks**: ribbons whose thickness swells and pinches to nothing as they cross the navy. Each band is a vertical gradient from its highlight into its color; non-streak bands get a **wet sheen**: two broad soft strokes (20px and 9px at 10% light-blue alpha) 12px under the crest. Back canvas draws bands 0–1, front draws 2, 3, 4, 6, 5, so paint covers the seal's base.
